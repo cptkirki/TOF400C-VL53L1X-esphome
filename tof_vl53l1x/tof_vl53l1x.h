@@ -3,7 +3,7 @@
 #include "esphome/core/component.h"
 #include "esphome/components/sensor/sensor.h"
 #include <Wire.h>
-#include "VL53L1X.h"   // lokale Kopie (oder <VL53L1X.h>, falls per libraries: eingebunden)
+#include <VL53L1X.h>   //using pololu/vl53l1x-arduino library or "VL53L1X.h" when using a local copy
 
 namespace esphome {
 namespace tof_vl53l1x {
@@ -14,12 +14,11 @@ class MyCustomSensor : public PollingComponent, public sensor::Sensor {
 
   // --- YAML-Setter ---
   void set_distance_mode(uint8_t mode) { distance_mode_ = mode; }             // 0=short,1=medium,2=long
-  void set_timing_budget_ms(uint32_t ms) { timing_budget_ms_ = ms; }           // z.B. 50000
-  void set_intermeasurement_ms(uint32_t ms) { intermeasurement_ms_ = ms; }     // z.B. 200
+  void set_timing_budget_ms(uint32_t ms) { timing_budget_ms_ = ms; }           // e.g. 50000
+  void set_intermeasurement_ms(uint32_t ms) { intermeasurement_ms_ = ms; }     // e.g. 200
 
   void setup() override {
-    // Wire.begin();  // ESPHome initialisiert I2C
-    Wire.setClock(400000);
+   Wire.setClock(400000);
 
     tof_.setTimeout(500);
     if (!tof_.init()) {
@@ -28,7 +27,7 @@ class MyCustomSensor : public PollingComponent, public sensor::Sensor {
       return;
     }
 
-    // Distance-Mode anwenden
+    // Distance-Mode 
     switch (distance_mode_) {
       case 0: tof_.setDistanceMode(VL53L1X::Short); break;
       case 1: tof_.setDistanceMode(VL53L1X::Medium); break;
