@@ -114,7 +114,6 @@ i2c:
 sensor:
   - platform: tof_vl53l1x
     name: "Distance"
-    address: 0x29              # I²C address (7-bit), default 0x29
     distance_mode: long        # short | medium | long
     timing_budget_ms: 150000   # integration time (e.g., 50_000..200_000)
     intermeasurement_ms: 250   # measurement period; will be clamped to >= timing budget
@@ -129,8 +128,6 @@ sensor:
 
 ### Parameters
 
-- **address** *(uint8)*: I²C address after initialization (default `0x29`).
-  - The component initializes the sensor at the default address, then applies the new address.
 - **distance\_mode** *(enum)*: `short`, `medium`, or `long`.
   - *short*: best stability/ambient immunity, \~1–1.3 m range.
   - *medium*: balanced.
@@ -242,7 +239,6 @@ esp32:
 sensor:
   - platform: tof_vl53l1x
     name: "Distance"
-    address: 0x29
     distance_mode: long
     timing_budget_ms: 150000
     intermeasurement_ms: 250
