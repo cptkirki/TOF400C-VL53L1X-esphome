@@ -203,12 +203,6 @@ VL53L1X boots at `0x29`. To run multiple sensors on the same bus, you must contr
 
 ---
 
-## License
-
-MIT. See `LICENSE`.
-
----
-
 ## Credits
 
 - [Pololu VL53L1X Arduino library]
@@ -249,4 +243,4 @@ sensor:
     accuracy_decimals: 0
     unit_of_measurement: "mm"
 ```
-
+[Pololu VL53L1X Arduino library]: https://github.com/pololu/vl53l1x-arduino
