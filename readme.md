@@ -1,6 +1,6 @@
 # ESPHome External Component: VL53L1X (ToF)
 
-A lightweight ESPHome external component for the **VL53L1X** time‑of‑flight distance sensor (e.g., TOF400C modules). It exposes tunable **distance mode**, **timing budget**, **inter‑measurement period**, and **I²C address** directly in YAML. Designed to feel like a "digital ruler" with optional on‑device smoothing via ESPHome filters.
+A lightweight ESPHome external component for the **VL53L1X** time‑of‑flight distance sensor (e.g., TOF400C modules). It exposes tunable **distance mode**, **timing budget** and **inter‑measurement period** directly in YAML. Designed to feel like a "digital ruler" with optional on‑device smoothing via ESPHome filters.
 
 > Works on ESP32 (Arduino framework) and ESP8266. Uses the Pololu VL53L1X driver internally.
 
