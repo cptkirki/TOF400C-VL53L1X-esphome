@@ -11,7 +11,6 @@ A lightweight ESPHome external component for the **VL53L1X** time‑of‑flight 
 - Configurable **distance modes**: `short`, `medium`, `long` (up to \~4 m with *long*).
 - Adjustable **timing budget** (integration time) for stability vs. speed.
 - Adjustable **inter‑measurement** period for clean, periodic sampling.
-- **I²C address** selectable in YAML (default `0x29`).
 - Plays nicely with ESPHome’s filters (median, sliding window, delta, throttle, etc.).
 
 ---
